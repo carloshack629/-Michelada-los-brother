@@ -107,9 +107,9 @@ $('#mq').textContent='MICHELADA • LOS BROTHER • $3.000 • '.repeat(10);
 const up=()=>{const t='$'+(n*P).toLocaleString('es-CO');$('#qn').textContent=n;$('#tt').textContent=t;$('#tn').textContent=t};
 $('#mn').onclick=()=>{if(n>1){n--;up()}};$('#pl').onclick=()=>{if(n<50){n++;up()}};
 $('#cn').onclick=async e=>{const b=e.currentTarget;try{await navigator.clipboard.writeText('3163005573');b.textContent='¡Número copiado!'}catch(x){b.textContent='3163005573'}setTimeout(()=>b.textContent='Copiar número',2200)};
-const LV=[['Apenas una gotita','💧',1],['Sed normalita','😅',1],['Ya se siente','🥵',2],['¡Sed de brother!','🔥',3],['¡Sed nivel desierto!','🏜️',4]];let rec=1;
+const LV=[['Poquita sed','💧',1],['Algo de sed','😅',1],['Sed','🥵',2],['Mucha sed','🔥',3],['¡Muchísima sed!','🏜️',4]];let rec=1;
 const pl=r=>r+(r>1?' micheladas':' michelada');
-function sed(){const v=+$('#sd').value,l=LV[v<=20?0:v<=45?1:v<=70?2:v<=90?3:4];rec=l[2];$('#se').textContent=l[1];$('#st').textContent=l[0]+' · te recomendamos '+pl(rec);$('#sb').textContent='Pedir '+pl(rec)}
+function sed(){const v=+$('#sd').value,l=LV[v<=20?0:v<=45?1:v<=70?2:v<=90?3:4];rec=l[2];$('#se').textContent=l[1];$('#st').textContent=l[0];$('#sb').textContent='Pedir '+pl(rec)}
 $('#sd').oninput=sed;sed();
 $('#sb').onclick=()=>{n=rec;up();$('#pedido').scrollIntoView({behavior:'smooth'})};
 const txt=()=>'Quiero '+pl(n)+' de Michelada Los Brother. Total: $'+(n*P).toLocaleString('es-CO');
